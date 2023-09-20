@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "richmond-apps-usa"
+  },
+  "targets": {
+    "richmond-apps-usa": {
+      "hosting": {
+        "ra-video-app": [
+          "richmond-apps-usa"
+        ],
+        "video-app": [
+          "richmond-apps-video"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

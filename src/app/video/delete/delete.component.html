@@ -1,0 +1,9 @@
+  <!-- Edit Modal -->
+  <app-modal modalID="deleteClip">
+    <p class="text-2xl m-4 font-bold">Delete: {{deleteClip?.fileTitle}}</p>
+    <app-alert *ngIf="showAlert" [color]="alertColor">
+      <a  (click)="deleteFn()">
+        <p >{{alertMsg}}</p>
+      </a>  
+    </app-alert>
+  </app-modal>

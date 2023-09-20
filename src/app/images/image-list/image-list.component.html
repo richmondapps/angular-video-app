@@ -1,0 +1,28 @@
+<!-- Main Content -->
+
+  
+
+  <!-- Top Bar -->
+  <section class="container mx-auto my-8 bg-secondary p-6">
+    <div class="rounded relative flex justify-between">
+      <a [routerLink]="['/image-upload']" routerLinkActive="text-indigo-400"
+      [routerLinkActiveOptions]="{exact: true}"  class="bg-indigo-400 text-white py-4 px-10 text-xl">Upload Image</a>
+      
+   
+    </div>
+  </section>
+  
+  
+
+  <div class="grid grid-cols-4 grid-rows-5 gap-4">
+    <div  *ngFor="let x of iconList">
+    <img class="grid grid-cols-4 grid-rows-5 gap-4" [src]="x.fileUrl" alt="" crossorigin="anonymous">
+    <div>
+      
+    </div>
+  </div>
+  </div>
+  
+ 
+  
+  

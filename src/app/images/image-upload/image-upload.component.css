@@ -1,0 +1,28 @@
+.inputFile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputFile + label {
+  padding: .6rem!important;
+  font-size: .9rem;
+  font-weight: 500;
+  border-radius: 3px;
+  color: white;
+  background-color: green;
+  display: inline-block;
+  cursor: pointer;
+  margin: .8rem 0;
+}
+.inputFile:focus + label,
+.inputFile + label:hover {
+  padding: .6rem!important;
+  background-color: red;
+}
+.inputFile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}

@@ -1,0 +1,48 @@
+<input
+  *ngIf="type !== 'directive'"
+  [formControl]="control"
+  [type]="type"
+  class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+  [placeholder]="placeholder"
+/>
+<input
+  *ngIf="type === 'directive'"
+  [formControl]="control"
+  [type]="type"
+  maxlength="14"
+  class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+  [placeholder]="placeholder"
+  appPhoneMask
+/>
+
+<ng-container *ngIf="control.touched && control.dirty">
+  <p *ngIf="control.errors?.['pattern']" class="text-red-400">
+    Passwords must be at least 8 characters, contain at least 1 uppercase
+    letter, 1 lowercase letter, and 1 number
+  </p>
+  <p *ngIf="control.errors?.['required']" class="text-red-400">
+    Field is required
+  </p>
+  <p *ngIf="controlName !== 'personPhoneNumber' && control.errors?.['minlength']" class="text-red-400">
+    Min length is
+    {{control.errors?.['minlength'].requiredLength}}, you entered
+    {{control.errors?.['minlength'].actualLength}}
+  </p>
+  <p *ngIf="control.errors?.['maxlength']" class="text-red-400">
+    Max length is
+    {{control.errors?.['maxlength'].requiredLength}}, you entered
+    {{control.errors?.['maxlength'].actualLength}}
+  </p>
+  <p *ngIf="controlName === 'personPhoneNumber' && control.errors?.['minlength']"  class="text-red-400">
+       Phone numbers must be 10 digits including area code
+    </p>
+
+  <p *ngIf="control.errors?.['email']" class="text-red-400">
+    You must enter a valid email
+  </p>
+
+  <p *ngIf="control.errors?.['min']" class="text-red-400">Value to low</p>
+  <p *ngIf="control.errors?.['max']" class="text-red-400">Value to high</p>
+</ng-container>
+
+<!-- {{ control.errors?.['email'] | json }} -->

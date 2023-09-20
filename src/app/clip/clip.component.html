@@ -1,0 +1,113 @@
+<!-- Main Content -->
+<section class="container mx-auto my-8 bg-secondary p-6">
+  <div class="rounded relative flex flex-col">
+    <!-- Title and Uploader -->
+    <h1 class="font-bold mb-2 text-3xl">{{ title }}</h1>
+    <!-- <p class="font-bold mb-2 text-3xl">{{ id }}</p> -->
+    <div class="text-gray-400 mb-6">
+      Uploaded on:
+      <span>{{ timestamp | firebaseTimestamp }}</span>
+    </div>
+
+    <!-- <div class=" aspect-video overflow-hidden">
+         <video width="640" height="480"   
+      controls
+  autoplay
+      
+      crossorigin="anonymous"
+     >
+<source  [src]="fileUrl" type="video/*">
+        
+      </video>
+    </div> -->
+
+    <!-- Video Editor -->
+    <div class="relative aspect-video overflow-hidden">
+      <!-- Video Player -->
+      <video
+        controls
+        #videoPlayer
+        crossorigin="anonymous"
+        class="video-js vjs-theme-fantasy mx-auto videoDropRef"
+      ></video>
+
+      <!-- Play button -->
+      <!-- <button (click)="togglePlayPause()">
+    {{ player && player.paused() ? 'Play' : 'Pause' }}
+  </button> -->
+    </div>
+  </div>
+</section>
+
+<!-- <div class="mt-4 mb-4">
+  <p>Tools used in this project.</p>
+
+  <div class="grid grid-cols-4 grid-rows-5 gap-4 bg-white">
+    <div  *ngFor="let x of toolsUsed">
+    <img class="grid grid-cols-4 grid-rows-5 gap-4" [src]="x.fileUrl" alt="" crossorigin="anonymous">
+    <div>
+      <button
+      type="submit"
+      class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition hover:bg-indigo-500"
+      (click)="removeImageToProjectFn(x)"
+    >
+      Remove 
+    </button>
+    </div>
+  </div>
+  </div>
+</div> -->
+
+<!-- <form [formGroup]="codeSippetForm" (ngSubmit)="addCodeFn()">
+  <textarea
+    name="codeSnippet"
+    formControlName="codeSnip"
+    id=""
+    cols="80"
+    rows="10"
+  ></textarea>
+  <button
+    type="submit"
+    class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition hover:bg-indigo-500 disabled:opacity-50 disabled:bg-indigo-400"
+    [disabled]="codeSippetForm.invalid"
+  >
+    Submit
+  </button>
+</form> -->
+
+<!-- <div class="grid grid-cols-4 grid-rows-5 gap-4">
+  <div  *ngFor="let x of iconList">
+  <img class="grid grid-cols-4 grid-rows-5 gap-4" [src]="x.fileUrl" alt="" crossorigin="anonymous">
+  <div>
+    <button
+    type="submit"
+    class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition hover:bg-indigo-500 disabled:opacity-50 disabled:bg-indigo-400"
+    (click)="addImageToProjectFn(x)"
+  >
+    Add 
+  </button>
+  </div>
+</div>
+</div> -->
+
+<ng-container *ngFor="let x of formattedData">
+  <div class="w-3/4 mx-auto p-2 m-2">
+    <p *ngIf="x.comment" class="comment">
+      {{ x.comment }}
+    </p>
+    <!-- \{{x.comment}}-->
+    <pre>
+        <code 
+    [highlight]="x.code" 
+    [languages]="['typescript']" 
+    (highlighted)="onHighlight($event)">    
+  </code>
+  </pre>
+  </div>
+</ng-container>
+
+<!-- More Clips -->
+<div class="container mx-auto my-8">
+  <h2 class="mt-6 text-2xl">More Clips</h2>
+  <app-clips-list></app-clips-list>
+</div>

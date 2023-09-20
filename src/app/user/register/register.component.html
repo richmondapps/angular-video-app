@@ -1,0 +1,153 @@
+      
+      <app-alert *ngIf="showAlert" [color]="alertColor">
+        {{alertMsg}}
+      </app-alert>
+      <!-- Registration Form -->
+      <form [formGroup]="registerForm" (ngSubmit)="registerUserFn()">
+        <!-- Name -->
+        <div class="mb-3">
+          <label class="inline-block mb-2">First Name</label>
+          <app-input [control]="personFirstName" placeholder="Enter First Name"></app-input>
+        </div>
+        <!-- Name -->
+        <div class="mb-3">
+          <label class="inline-block mb-2">Last Name</label>
+          <app-input [control]="personLastName" placeholder="Enter Last Name"></app-input>
+        </div>
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="inline-block mb-2">Email</label>
+          <app-input [control]="email" type="email" placeholder="Enter Email"></app-input>
+        </div>
+        <!-- Age -->
+        <!-- <div class="mb-3">
+          <label class="inline-block mb-2">Age</label>
+          <app-input [control]="age" type="number" placeholder="Enter Age"></app-input>
+        </div> -->
+        <!-- Password -->
+        <!-- <div class="mb-3">
+          <label class="inline-block mb-2">Password</label>
+          <app-input [control]="password" type="password" placeholder="Enter Password"></app-input>
+         
+        </div> -->
+        <!-- Confirm Password -->
+        <!-- <div class="mb-3">
+          <label class="inline-block mb-2">Confirm Password</label>
+          <app-input [control]="confirmPassword" type="password" placeholder="Confirm Password"></app-input>
+        
+        </div> -->
+        <!-- Phone Number -->
+        <div class="mb-3">
+          <!-- <label class="inline-block mb-2">Phone Number</label> -->
+          <!-- <input appPhoneMask formControlName="personPhoneNumber" type="text"
+            class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
+              duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+            placeholder="Enter Phone Number" minlength="13" maxlength="13"/>
+            <p *ngIf="registerForm.errors?.['minlength']" class="text-red-400">
+              Min length is
+              {{registerForm.errors?.['minlength'].requiredLength}}, you entered
+              {{registerForm.errors?.['minlength'].actualLength}}
+            </p> -->
+            <!-- <app-input [control]="personPhoneNumber" type="directive" controlName="personPhoneNumber" [checkDir]="condition" placeholder="Enter Phone Number"></app-input> -->
+
+        </div>
+        <button type="submit"
+          class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition
+            hover:bg-indigo-500 disabled:opacity-50 disabled:bg-indigo-400"
+
+            [disabled]="registerForm.invalid || inSubmission">
+          Submit
+        </button>
+      </form>
+
+      <section>
+        <!-- <p>Or sign up using a Gmail account</p> -->
+<!-- 
+        <div id="g_id_onload"
+        data-client_id="888372631469-v9vridkgnaahagbfqrot3hr630k02fv3.apps.googleusercontent.com"
+        data-context="signup"
+        data-ux_mode="popup"
+        data-login_uri="/"
+        data-auto_prompt="false">
+   </div>
+   
+   <div class="g_id_signin"
+        data-type="standard"
+        data-shape="pill"
+        data-theme="outline"
+        data-text="signup_with"
+        data-size="large"
+        data-logo_alignment="left">
+   </div>  -->
+
+   <!-- <div id="g_id_onload"
+   data-client_id="888372631469-v9vridkgnaahagbfqrot3hr630k02fv3.apps.googleusercontent.com"
+   data-login_uri="http:localhost:5100"
+   data-auto_prompt="false">
+</div>
+<div class="g_id_signin"
+   data-type="standard"
+   data-size="large"
+   data-theme="outline"
+   data-text="sign_in_with"
+   data-shape="rectangular"
+   data-logo_alignment="left">
+</div>  -->
+
+
+<!-- <button type="button"
+class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition
+  hover:bg-indigo-500 disabled:opacity-50 disabled:bg-indigo-400"
+ (click)="showFormFn()"
+ >
+Passworldess
+</button> -->
+
+      <!-- </section> <div id="buttonDiv"></div> -->
+      <!-- <form *ngIf="isShowForm" [formGroup]="passwordlessForm">
+   
+          <input
+            type="email"
+           
+            placeholder="Enter your email address"
+            formControlName="passwordlessEmail"
+          />
+    
+        <div >
+          <button
+          class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition
+          hover:bg-indigo-500 disabled:opacity-50 disabled:bg-indigo-400"
+            [disabled]="passwordless.invalid"
+            (click)="sendEmailLink()"
+          >
+            Send Sign In Link
+          </button>
+        </div>
+      </form> -->
+
+
+      <!-- <ng-container *ngIf="isEmailExists">
+        <div class="verificationCompleteWrapper">
+          <p class="bold">
+            {{ emailAddressExists }} is already associated with an account. We'll
+            redirect you to Sign In...
+          </p>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="isAlreadyRegistered">
+        <div class="verificationCompleteWrapper">
+          <p>
+            Hi {{ personFirstName }}, you're already registered. We'll redirect you
+            to Sign In...
+          </p>
+        </div>
+      </ng-container>
+    
+      <ng-container *ngIf="isSignInLinkSent">
+        <div class="verificationCompleteWrapper">
+          An email containing a sign up link has been sent to {{ email }}
+        </div>
+      </ng-container> -->
+
+
+   

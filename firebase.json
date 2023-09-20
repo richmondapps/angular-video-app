@@ -1,0 +1,36 @@
+{
+  "hosting": [
+    {
+      "target": "ra-video-app",
+      "source": ".",
+      "frameworksBackend": {}
+    },
+    {
+      "target": "video-app", 
+      "public": "dist/ra-video-app",
+      "rewrites": [
+        {
+            "source": "**",
+            "destination": "/index.html",
+            "headers": [
+                {
+                    "key": "Cross-Origin-Opener-Policy",
+                    "value": "same-origin-allow-popups"
+                }
+            ]
+        }
+    ],
+    "headers": [
+        {
+            "source": "**",
+            "headers": [
+                {
+                    "key": "Cross-Origin-Opener-Policy",
+                    "value": "same-origin-allow-popups"
+                }
+            ]
+        }
+    ]
+    }
+  ]
+}
